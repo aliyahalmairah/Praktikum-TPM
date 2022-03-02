@@ -6,7 +6,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  String username = "";
+  String email = "";
   String password = "";
   bool isLoginSuccess = true;
 
@@ -44,11 +44,11 @@ class _LoginPageState extends State<LoginPage> {
       child: TextFormField(
         enabled: true,
         onChanged: (value) {
-          username = value;
+          email = value;
         },
         decoration: InputDecoration(
-            labelText: 'Username',
-            hintText: 'Masukkan Username',
+            labelText: 'Email',
+            hintText: 'Masukkan Email',
             contentPadding: const EdgeInsets.all(20),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.all(Radius.circular(25)),
@@ -73,8 +73,8 @@ class _LoginPageState extends State<LoginPage> {
         },
         obscureText: true,
         decoration: InputDecoration(
-            labelText: 'Masukkan Password',
-            hintText: 'Password',
+            labelText: 'Password',
+            hintText: 'Masukkan Password',
             contentPadding: const EdgeInsets.all(20),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.all(Radius.circular(25)),
@@ -100,7 +100,7 @@ class _LoginPageState extends State<LoginPage> {
         ),
         onPressed: () {
           String text = "";
-          if (username == "Flutter" && password == "flutter123") {
+          if (email == "flutter@gmail.com" && password == "flutter123") {
             setState(() {
               text = "Login Berhasil";
               isLoginSuccess = true;
@@ -117,7 +117,7 @@ class _LoginPageState extends State<LoginPage> {
 
           ScaffoldMessenger.of(context).showSnackBar(snackBar);
         },
-        child: const Text('Login'),
+        child: const Text('Log In'),
       ),
     );
   }
